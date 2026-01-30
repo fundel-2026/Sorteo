@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel Admin - Sorteo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/admin-B94xqamM.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/firebase-BVt4Iold.js">
+  <link rel="stylesheet" crossorigin href="./assets/firebase-DsCtESNR.css">
+</head>
+
+<body class="admin-body">
+
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="logo" style="font-size: 1.5rem; margin: 0;">✨ Panel<span>Admin</span></div>
+
+            <div class="stats-card">
+                <span class="stats-number" id="total-count">0</span>
+                <span class="stats-label">Registrados</span>
+            </div>
+
+            <div class="admin-actions">
+                <button class="btn-primary" id="export-btn">📥 Descargar Excel</button>
+            </div>
+        </header>
+
+        <!-- Raffle Section -->
+        <section class="raffle-area">
+            <h2 style="margin-top: 0;">Gran Sorteo</h2>
+            <div class="raffle-display" id="raffle-display">ESPERANDO...</div>
+            <button class="btn-primary glow" id="start-raffle-btn" style="max-width: 300px;">🎲 ¡Sortear!</button>
+        </section>
+
+        <!-- Data Table -->
+        <h3 style="margin-top: 2rem;">Lista de Registros</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>WhatsApp</th>
+                        <th>Ciudad</th>
+                        <th>Curso</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Rows here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Confetti -->
+    <script>
+        // Simple export logic if module fails, or handled in admin.js
+    </script>
+</body>
+
+</html>
