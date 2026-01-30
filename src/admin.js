@@ -11,16 +11,22 @@ const exportBtn = document.getElementById('export-btn');
 let participants = [];
 let isRolling = false;
 
+// Firebase Imports
+import { db } from './firebase.js';
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
+
 // --- Init ---
 async function loadData() {
-    try {
-        const res = await fetch('/api/participants');
-        participants = await res.json();
+    // Listen for real-time updates
+    const q = query(collection(db, "participants"), orderBy("registeredAt", "desc"));
+
+    onSnapshot(q, (snapshot) => {
+        participants = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         renderTable();
-    } catch (err) {
-        console.error('Error loading data', err);
+    }, (error) => {
+        console.error("Error reading data:", error);
         raffleDisplay.textContent = 'ERROR DE CONEXIÓN';
-    }
+    });
 }
 
 function renderTable() {
@@ -103,5 +109,5 @@ exportBtn.addEventListener('click', () => {
 
 // Start
 loadData();
-// Poll for updates every 5 seconds
-setInterval(loadData, 5000);
+// Poll for updates (Removed: Firestore is Real-Time)
+// setInterval(loadData, 5000);

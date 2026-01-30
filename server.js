@@ -15,15 +15,18 @@ const db = await JSONFilePreset('db.json', defaultData);
 
 // --- Server Setup ---
 const app = express();
-app.use(cors());
-app.use(express.json());
 
-// Request Logger
+// Request Logger (First!)
 app.use((req, res, next) => {
     console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl}`);
-    console.log('Headers:', JSON.stringify(req.headers));
+    res.on('finish', () => {
+        console.log(`  --> Status: ${res.statusCode}`);
+    });
     next();
 });
+
+app.use(cors());
+app.use(express.json());
 
 // Serve Static Files (Frontend)
 app.use(express.static(path.join(__dirname, 'dist')));

@@ -77,6 +77,17 @@
       "course": "Programación",
       "consent": "SI",
       "registeredAt": "2026-01-30T20:59:36.403Z"
+    },
+    {
+      "id": "1769807061681",
+      "name": "Steeven Yanez",
+      "whatsapp": "+593959812596",
+      "city": "Pujilí",
+      "goal": "Emprender / mejorar mi negocio",
+      "area": "Salud",
+      "course": "Preuniversitario",
+      "consent": "SI",
+      "registeredAt": "2026-01-30T21:04:21.681Z"
     }
   ]
 }

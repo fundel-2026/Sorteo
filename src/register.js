@@ -13,6 +13,10 @@ function showToast(msg, isError = false) {
     setTimeout(() => toast.classList.add('hidden'), 3000);
 }
 
+// Firebase Imports
+import { db } from './firebase.js';
+import { collection, addDoc } from "firebase/firestore";
+
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -40,21 +44,19 @@ form.addEventListener('submit', async (e) => {
     submitBtn.disabled = true;
 
     try {
-        const response = await fetch('/api/register', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                fullName,
-                whatsapp,
-                city,
-                goal,
-                area,
-                course,
-                consent
-            })
+        // Save to Firestore
+        await addDoc(collection(db, "participants"), {
+            name: fullName.trim(),
+            whatsapp: whatsapp || '',
+            city: city || '',
+            goal: goal || '',
+            area: area || '',
+            course: course || '',
+            consent: consent,
+            registeredAt: new Date().toISOString()
         });
 
-        const data = await response.json();
+        const data = { success: true };
 
         if (data.success) {
             // Show success view
