@@ -1,0 +1,49 @@
+{
+  "participants": [
+    {
+      "id": "1769788244447",
+      "name": "Steeven Yanez",
+      "contact": "steevenyanez11@gmail.com",
+      "registeredAt": "2026-01-30T15:50:44.447Z"
+    },
+    {
+      "id": "1769795305950",
+      "name": "Paul Perez",
+      "contact": "0996712762",
+      "registeredAt": "2026-01-30T17:48:25.950Z"
+    },
+    {
+      "id": "1769805514960",
+      "name": "Steeven Yanez",
+      "whatsapp": "+593959812596",
+      "city": "Latacunga",
+      "goal": "Conseguir empleo",
+      "area": "Salud",
+      "course": "Cajeros Bancarios y Comerciales",
+      "consent": "SI",
+      "registeredAt": "2026-01-30T20:38:34.960Z"
+    },
+    {
+      "id": "1769805754229",
+      "name": "Steeven Yanez",
+      "whatsapp": "+593959812596",
+      "city": "Salcedo",
+      "goal": "Mejorar mi trabajo actual",
+      "area": "Salud",
+      "course": "Auxiliar Contable",
+      "consent": "SI",
+      "registeredAt": "2026-01-30T20:42:34.229Z"
+    },
+    {
+      "id": "1769805839237",
+      "name": "Eric",
+      "whatsapp": "099999999",
+      "city": "Latacunga",
+      "goal": "Conseguir empleo",
+      "area": "Salud",
+      "course": "Asesores de Crédito",
+      "consent": "SI",
+      "registeredAt": "2026-01-30T20:43:59.237Z"
+    }
+  ]
+}
