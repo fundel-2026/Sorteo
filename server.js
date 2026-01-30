@@ -18,6 +18,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Request Logger
+app.use((req, res, next) => {
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl}`);
+    console.log('Headers:', JSON.stringify(req.headers));
+    next();
+});
+
 // Serve Static Files (Frontend)
 app.use(express.static(path.join(__dirname, 'dist')));
 

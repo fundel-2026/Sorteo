@@ -66,6 +66,17 @@
       "course": "Preuniversitario",
       "consent": "SI",
       "registeredAt": "2026-01-30T20:55:05.801Z"
+    },
+    {
+      "id": "1769806776403",
+      "name": "Test User",
+      "whatsapp": "1234567890",
+      "city": "Latacunga",
+      "goal": "Prueba",
+      "area": "Sistemas",
+      "course": "Programación",
+      "consent": "SI",
+      "registeredAt": "2026-01-30T20:59:36.403Z"
     }
   ]
 }
