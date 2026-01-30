@@ -390,3 +390,104 @@ tr:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .blob-1 {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -50px;
+  }
+
+  .blob-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -30px;
+    right: -30px;
+  }
+
+  .glass-card {
+    padding: 2rem;
+    width: 95%;
+  }
+
+  /* Admin Header Stacking */
+  .admin-header {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .admin-actions button {
+    margin-left: 0;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .raffle-display {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+    /* Slightly smaller base font */
+  }
+
+  .glass-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .blob {
+    opacity: 0.4;
+    /* Reduce distraction on small screens */
+  }
+
+  .input-group {
+    margin-bottom: 1.2rem;
+  }
+
+  .radio-options {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Admin specifics for mobile */
+  body.admin-body {
+    padding: 1rem;
+  }
+
+  .stats-card {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .table-container {
+    border-radius: 16px;
+  }
+
+  th,
+  td {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .raffle-area {
+    padding: 1.5rem;
+  }
+
+  .raffle-display {
+    font-size: 1.5rem;
+    min-height: 80px;
+  }
+}
