@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro Sorteo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/main-m7W6I_31.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/firebase-BVt4Iold.js">
+  <link rel="stylesheet" crossorigin href="./assets/firebase-DsCtESNR.css">
+</head>
+
+<body>
+  <!-- Background Blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <main id="app-container">
+    <div class="glass-card">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="logo">✨ Registro<span>Sorteo</span></div>
+        <p class="subtitle">Ingresa tus datos para participar</p>
+      </header>
+
+      <!-- View: Form -->
+      <div id="view-form" class="view-section active">
+        <form id="register-form">
+
+          <!-- 1. Nombre -->
+          <div class="input-group">
+            <label for="fullName">1. Nombres y apellidos</label>
+            <input type="text" id="fullName" required placeholder="Ej: Juan Pérez" autocomplete="name">
+          </div>
+
+          <!-- 2. WhatsApp -->
+          <div class="input-group">
+            <label for="whatsapp">2. Número de WhatsApp</label>
+            <input type="tel" id="whatsapp" required placeholder="Ej: 0991234567" autocomplete="tel">
+          </div>
+
+          <!-- 3. Ciudad -->
+          <div class="input-group">
+            <label for="city">3. Ciudad</label>
+            <select id="city" required>
+              <option value="" disabled selected>Selecciona tu ciudad</option>
+              <option value="Latacunga">Latacunga</option>
+              <option value="Salcedo">Salcedo</option>
+              <option value="Pujilí">Pujilí</option>
+              <option value="Saquisilí">Saquisilí</option>
+              <option value="La Maná">La Maná</option>
+              <option value="Sigchos">Sigchos</option>
+              <option value="Otra">Otra</option>
+            </select>
+          </div>
+
+          <!-- 4. Objetivo -->
+          <div class="input-group">
+            <label for="goal">4. ¿Qué estás buscando en este momento?</label>
+            <select id="goal" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="Conseguir empleo">Conseguir empleo</option>
+              <option value="Mejorar mi trabajo actual">Mejorar mi trabajo actual</option>
+              <option value="Emprender / mejorar mi negocio">Emprender / mejorar mi negocio</option>
+              <option value="Aprender por superación personal">Aprender por superación personal</option>
+            </select>
+          </div>
+
+          <!-- 5. Área -->
+          <div class="input-group">
+            <label for="area">5. Área que más te interesa</label>
+            <select id="area" required>
+              <option value="" disabled selected>Selecciona un área</option>
+              <option value="Salud">Salud</option>
+              <option value="Administración">Administración</option>
+              <option value="Finanzas">Finanzas</option>
+              <option value="Educación">Educación</option>
+            </select>
+          </div>
+
+          <!-- 6. Curso -->
+          <div class="input-group">
+            <label for="course">6. ¿Cuál de los siguientes cursos le llama más la atención?</label>
+            <select id="course" required>
+              <option value="" disabled selected>Selecciona un curso</option>
+              <option value="Auxiliar de Enfermeria">Auxiliar de Enfermeria</option>
+              <option value="Auxiliar de Farmacia">Auxiliar de Farmacia</option>
+              <option value="Auxiliar Contable">Auxiliar Contable</option>
+              <option value="Auxiliar de Parvularia">Auxiliar de Parvularia</option>
+              <option value="Cajeros Bancarios y Comerciales">Cajeros Bancarios y Comerciales</option>
+              <option value="Asesores de Crédito">Asesores de Crédito</option>
+              <option value="Preuniversitario">Preuniversitario</option>
+            </select>
+          </div>
+
+          <!-- 7. Consentimiento -->
+          <div class="input-group checkbox-group">
+            <label style="margin-bottom: 10px; display: block;">7. Acepto participar en el sorteo y autorizo el
+              tratamiento de mis datos para fines informativos y de contacto relacionados con programas de
+              capacitación.</label>
+            <div class="radio-options">
+              <label><input type="radio" name="consent" value="SI" required> SI</label>
+              <label><input type="radio" name="consent" value="NO" required> NO</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary glow" id="submit-btn" style="margin-top: 20px;">✅
+            ¡Registrarme!</button>
+        </form>
+      </div>
+
+      <!-- View: Success -->
+      <div id="view-success" class="view-section hidden">
+        <div class="success-icon">🎉</div>
+        <h3>¡Registro Exitoso!</h3>
+        <p>Ya estás participando en el sorteo.</p>
+        <button class="btn-secondary" id="back-btn">Registrar a otra persona</button>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="toast" class="toast hidden"></div>
+
+</body>
+
+</html>
