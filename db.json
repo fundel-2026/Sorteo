@@ -44,6 +44,17 @@
       "course": "Asesores de Crédito",
       "consent": "SI",
       "registeredAt": "2026-01-30T20:43:59.237Z"
+    },
+    {
+      "id": "1769806405976",
+      "name": "Test User",
+      "whatsapp": "1234567890",
+      "city": "Latacunga",
+      "goal": "Prueba",
+      "area": "Sistemas",
+      "course": "Programación",
+      "consent": "SI",
+      "registeredAt": "2026-01-30T20:53:25.976Z"
     }
   ]
 }

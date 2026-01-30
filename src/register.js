@@ -65,7 +65,7 @@ form.addEventListener('submit', async (e) => {
             showToast(data.error || 'Error al registrar', true);
         }
     } catch (err) {
-        showToast('Error de conexión', true);
+        showToast('Error: ' + err.message, true);
         console.error(err);
     } finally {
         submitBtn.textContent = originalBtnText;
