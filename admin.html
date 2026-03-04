@@ -27,11 +27,35 @@
             </div>
         </header>
 
-        <!-- Raffle Section -->
-        <section class="raffle-area">
-            <h2 style="margin-top: 0;">Gran Sorteo</h2>
-            <div class="raffle-display" id="raffle-display">ESPERANDO...</div>
-            <button class="btn-primary glow" id="start-raffle-btn" style="max-width: 300px;">🎲 ¡Sortear!</button>
+        <!-- Podium / Top Winners Section -->
+        <section class="podium-area">
+            <h2 class="podium-title">🏆 Cuadro de Honor</h2>
+            <div class="podium-container" id="podium-container">
+                <!-- Winners Card 2 -->
+                <div class="podium-card silver" id="winner-2">
+                    <div class="podium-rank">2</div>
+                    <div class="podium-info">
+                        <h3 class="podium-name">---</h3>
+                        <p class="podium-stats">-- s | --/5</p>
+                    </div>
+                </div>
+                <!-- Winners Card 1 -->
+                <div class="podium-card gold" id="winner-1">
+                    <div class="podium-rank">1</div>
+                    <div class="podium-info">
+                        <h3 class="podium-name">Esperando registros...</h3>
+                        <p class="podium-stats">0 s | 0/5</p>
+                    </div>
+                </div>
+                <!-- Winners Card 3 -->
+                <div class="podium-card bronze" id="winner-3">
+                    <div class="podium-rank">3</div>
+                    <div class="podium-info">
+                        <h3 class="podium-name">---</h3>
+                        <p class="podium-stats">-- s | --/5</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Data Table -->
@@ -41,10 +65,9 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Nombre</th>
-                        <th>WhatsApp</th>
-                        <th>Ciudad</th>
-                        <th>Curso</th>
+                        <th>Participante</th>
+                        <th>Aciertos</th>
+                        <th>Tiempo (s)</th>
                         <th>Fecha</th>
                     </tr>
                 </thead>

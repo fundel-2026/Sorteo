@@ -31,83 +31,103 @@
 
           <!-- 1. Nombre -->
           <div class="input-group">
-            <label for="fullName">1. Nombres y apellidos</label>
-            <input type="text" id="fullName" required placeholder="Ej: Juan Pérez" autocomplete="name">
+            <label for="fullName">Nombre Completo</label>
+            <input type="text" id="fullName" required placeholder="Ingresa tu nombre" autocomplete="name">
           </div>
 
-          <!-- 2. WhatsApp -->
+          <div class="quiz-instructions">
+            <p>Responde las siguientes preguntas de FUNDEL lo más rápido posible:</p>
+          </div>
+
+          <!-- Q1 -->
           <div class="input-group">
-            <label for="whatsapp">2. Número de WhatsApp</label>
-            <input type="tel" id="whatsapp" required placeholder="Ej: 0991234567" autocomplete="tel">
-          </div>
-
-          <!-- 3. Ciudad -->
-          <div class="input-group">
-            <label for="city">3. Ciudad</label>
-            <select id="city" required>
-              <option value="" disabled selected>Selecciona tu ciudad</option>
-              <option value="Latacunga">Latacunga</option>
-              <option value="Salcedo">Salcedo</option>
-              <option value="Pujilí">Pujilí</option>
-              <option value="Saquisilí">Saquisilí</option>
-              <option value="La Maná">La Maná</option>
-              <option value="Sigchos">Sigchos</option>
-              <option value="Otra">Otra</option>
-            </select>
-          </div>
-
-          <!-- 4. Objetivo -->
-          <div class="input-group">
-            <label for="goal">4. ¿Qué estás buscando en este momento?</label>
-            <select id="goal" required>
-              <option value="" disabled selected>Selecciona una opción</option>
-              <option value="Conseguir empleo">Conseguir empleo</option>
-              <option value="Mejorar mi trabajo actual">Mejorar mi trabajo actual</option>
-              <option value="Emprender / mejorar mi negocio">Emprender / mejorar mi negocio</option>
-              <option value="Aprender por superación personal">Aprender por superación personal</option>
-            </select>
-          </div>
-
-          <!-- 5. Área -->
-          <div class="input-group">
-            <label for="area">5. Área que más te interesa</label>
-            <select id="area" required>
-              <option value="" disabled selected>Selecciona un área</option>
-              <option value="Salud">Salud</option>
-              <option value="Administración">Administración</option>
-              <option value="Finanzas">Finanzas</option>
-              <option value="Educación">Educación</option>
-            </select>
-          </div>
-
-          <!-- 6. Curso -->
-          <div class="input-group">
-            <label for="course">6. ¿Cuál de los siguientes cursos le llama más la atención?</label>
-            <select id="course" required>
-              <option value="" disabled selected>Selecciona un curso</option>
-              <option value="Auxiliar de Enfermeria">Auxiliar de Enfermeria</option>
-              <option value="Auxiliar de Farmacia">Auxiliar de Farmacia</option>
-              <option value="Auxiliar Contable">Auxiliar Contable</option>
-              <option value="Auxiliar de Parvularia">Auxiliar de Parvularia</option>
-              <option value="Cajeros Bancarios y Comerciales">Cajeros Bancarios y Comerciales</option>
-              <option value="Asesores de Crédito">Asesores de Crédito</option>
-              <option value="Preuniversitario">Preuniversitario</option>
-            </select>
-          </div>
-
-          <!-- 7. Consentimiento -->
-          <div class="input-group checkbox-group">
-            <label style="margin-bottom: 10px; display: block;">7. Acepto participar en el sorteo y autorizo el
-              tratamiento de mis datos para fines informativos y de contacto relacionados con programas de
-              capacitación.</label>
-            <div class="radio-options">
-              <label><input type="radio" name="consent" value="SI" required> SI</label>
-              <label><input type="radio" name="consent" value="NO" required> NO</label>
+            <div class="quiz-image-container">
+              <img src="https://fundel.edu.ec/wp-content/uploads/2023/05/Logo-Fundel-22-Anos.png"
+                alt="Aniversario FUNDEL" class="quiz-img">
+            </div>
+            <label>1. ¿A cuántos años de trayectoria llegó FUNDEL?</label>
+            <div class="radio-stack">
+              <label><input type="radio" name="q1" value="10 años" required> 10 años</label>
+              <label><input type="radio" name="q1" value="15 años" required> 15 años</label>
+              <label><input type="radio" name="q1" value="22 años" required> 22 años</label>
+              <label><input type="radio" name="q1" value="25 años" required> 25 años</label>
             </div>
           </div>
 
-          <button type="submit" class="btn-primary glow" id="submit-btn" style="margin-top: 20px;">✅
-            ¡Registrarme!</button>
+          <!-- Q2 -->
+          <div class="input-group">
+            <div class="quiz-image-container">
+              <img src="https://fundel.edu.ec/wp-content/uploads/2023/10/Directora-Ejecutiva.jpg" alt="Directora FUNDEL"
+                class="quiz-img">
+            </div>
+            <label>2. ¿Cuál es el nombre de la Directora Ejecutiva de FUNDEL?</label>
+            <div class="radio-stack">
+              <label><input type="radio" name="q2" value="Lic. Erica Tenorio" required> Lic. Erica Tenorio</label>
+              <label><input type="radio" name="q2" value="Lic. Bárbara Tello" required> Lic. Bárbara Tello</label>
+              <label><input type="radio" name="q2" value="Ing. Erica Yansapanta" required> Ing. Erica Yansapanta</label>
+              <label><input type="radio" name="q2" value="Ing. Bárbara Tenorio" required> Ing. Bárbara Tenorio</label>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="input-group">
+            <div class="quiz-image-container">
+              <img src="https://fundel.edu.ec/wp-content/uploads/2023/05/Sedes-Fundel.jpg" alt="Sedes FUNDEL"
+                class="quiz-img">
+            </div>
+            <label>3. ¿En qué ciudades está presente FUNDEL?</label>
+            <div class="radio-stack">
+              <label><input type="radio" name="q3" value="Quito, Guayaquil y Cuenca" required> Quito, Guayaquil y
+                Cuenca</label>
+              <label><input type="radio" name="q3" value="Ambato, Latacunga, Riobamba y Puyo" required> Ambato,
+                Latacunga, Riobamba y Puyo</label>
+              <label><input type="radio" name="q3" value="Riobamba, Ibarra y Loja" required> Riobamba, Ibarra y
+                Loja</label>
+              <label><input type="radio" name="q3" value="Ambato, Riobamba, Quito y Guayaquil" required> Ambato,
+                Riobamba, Quito y Guayaquil</label>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="input-group">
+            <div class="quiz-image-container">
+              <img src="https://fundel.edu.ec/wp-content/uploads/2023/05/Eslogan-Fundel.jpg" alt="Eslogan FUNDEL"
+                class="quiz-img">
+            </div>
+            <label>4. ¿Cuál es el eslogan de FUNDEL?</label>
+            <div class="radio-stack">
+              <label><input type="radio" name="q4" value="Tu primer paso a la superación" required> Tu primer paso a la
+                superación</label>
+              <label><input type="radio" name="q4" value="Formando líderes del mañana" required> Formando líderes del
+                mañana</label>
+              <label><input type="radio" name="q4" value="Creciendo juntos hacia el futuro" required> Creciendo juntos
+                hacia el futuro</label>
+              <label><input type="radio" name="q4" value="Educación que transforma vidas" required> Educación que
+                transforma vidas</label>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="input-group">
+            <div class="quiz-image-container">
+              <img src="https://fundel.edu.ec/wp-content/uploads/2023/05/Siglas-Fundel.jpg" alt="Siglas"
+                class="quiz-img">
+            </div>
+            <label>5. ¿Qué significan las siglas de FUNDEL?</label>
+            <div class="radio-stack">
+              <label><input type="radio" name="q5" value="Fundación Nacional de Educación y Liderazgo" required>
+                Fundación Nacional de Educación y Liderazgo</label>
+              <label><input type="radio" name="q5" value="Fondo Unido para el Desarrollo Local" required> Fondo Unido
+                para el Desarrollo Local</label>
+              <label><input type="radio" name="q5" value="Fundación de Desarrollo Humano y Social Latacunga" required>
+                Fundación de Desarrollo Humano y Social Latacunga</label>
+              <label><input type="radio" name="q5" value="Fundación de Unidad y Desarrollo Estudiantil Latacunga"
+                  required> Fundación de Unidad y Desarrollo Estudiantil Latacunga</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary glow" id="submit-btn" style="margin-top: 20px;">🚀
+            ¡Enviar Respuestas!</button>
         </form>
       </div>
 

@@ -33,57 +33,54 @@ function renderTable() {
     totalCount.textContent = participants.length;
     tableBody.innerHTML = '';
 
-    // Sort by newest first
-    const sorted = [...participants].reverse();
+    // Sort by Score (Desc) and then Duration (Asc)
+    const sorted = [...participants].sort((a, b) => {
+        if (b.score !== a.score) {
+            return b.score - a.score; // Higher score first
+        }
+        return a.duration - b.duration; // If same score, faster duration first
+    });
+
+    // Update Podium
+    updatePodium(sorted);
 
     sorted.forEach((p, index) => {
         const tr = document.createElement('tr');
         const date = new Date(p.registeredAt).toLocaleTimeString();
         tr.innerHTML = `
-            <td>${sorted.length - index}</td>
+            <td>${index + 1}</td>
             <td><strong>${p.name}</strong></td>
-            <td>${p.whatsapp}</td>
-            <td>${p.city}</td>
-            <td>${p.course}</td>
+            <td style="color: var(--secondary); font-weight: 800;">${p.score} / 5</td>
+            <td>${p.duration ? p.duration.toFixed(2) : '-'} s</td>
             <td style="color: var(--text-muted); font-size: 0.9em;">${date}</td>
         `;
         tableBody.appendChild(tr);
     });
 }
 
-// --- Raffle Logic ---
-startRaffleBtn.addEventListener('click', () => {
-    if (participants.length < 2) {
-        alert('Se necesitan al menos 2 participantes.');
-        return;
-    }
-    if (isRolling) return;
+function updatePodium(sorted) {
+    const winners = [
+        { id: 'winner-1', data: sorted[0] },
+        { id: 'winner-2', data: sorted[1] },
+        { id: 'winner-3', data: sorted[2] }
+    ];
 
-    isRolling = true;
-    startRaffleBtn.disabled = true;
+    winners.forEach(w => {
+        const card = document.getElementById(w.id);
+        if (w.data) {
+            card.querySelector('.podium-name').textContent = w.data.name;
+            card.querySelector('.podium-stats').textContent = `${w.data.duration.toFixed(2)}s | ${w.data.score}/5`;
+            card.style.opacity = '1';
+        } else {
+            card.querySelector('.podium-name').textContent = '---';
+            card.querySelector('.podium-stats').textContent = '-- s | --/5';
+            card.style.opacity = '0.5';
+        }
+    });
+}
 
-    let duration = 3000;
-    let intervalTime = 50;
+// Old raffle timer logic removed
 
-    const interval = setInterval(() => {
-        const randomName = participants[Math.floor(Math.random() * participants.length)].name;
-        raffleDisplay.textContent = randomName;
-        raffleDisplay.classList.remove('winner-highlight');
-    }, intervalTime);
-
-    setTimeout(() => {
-        clearInterval(interval);
-
-        // Pick Winner
-        const winner = participants[Math.floor(Math.random() * participants.length)];
-        raffleDisplay.textContent = winner.name;
-        raffleDisplay.classList.add('winner-highlight');
-
-        fireConfetti();
-        isRolling = false;
-        startRaffleBtn.disabled = false;
-    }, duration);
-});
 
 function fireConfetti() {
     const end = Date.now() + 3000;
